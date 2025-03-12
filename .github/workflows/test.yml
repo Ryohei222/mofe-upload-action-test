@@ -24,14 +24,14 @@ jobs:
       - name: Set Working Directory
         run: cd /root/app
 
-      - name: Rime test
-        run: rime test --keep_going
-
       - name: Embed constraints and testcases to statements
         run: ss-manager run -o md
+
+      - name: Rime test
+        run: rime test --keep_going
      
       - name: Upload testcases to MOFE
-        uses: Ryohei222/mofe-upload-action@8848454087e25236215bcf8f15ab44c098e9a3c0
+        uses: Ryohei222/mofe-upload-action@e8d24c8c45eca912f37dfa2f7ee5e9bf0a4a33bd
         with:
           mofe-username: ${{ vars.MOFE_USERNAME }}
           mofe-password: ${{ secrets.MOFE_PASSWORD }}
