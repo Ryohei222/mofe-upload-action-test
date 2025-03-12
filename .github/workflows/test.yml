@@ -32,7 +32,7 @@ jobs:
         run: ss-manager run
      
       - name: Upload testcases to MOFE
-        uses: Ryohei222/mofe-upload-action@5d14ead
+        uses: Ryohei222/mofe-upload-action@5d14eadca9950d21c8681d362df66ce7d0e5a4ea
         with:
           mofe-username: ${{ vars.MOFE_USERNAME }}
           mofe-password: ${{ secrets.MOFE_PASSWORD }}

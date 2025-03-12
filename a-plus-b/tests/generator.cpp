@@ -17,5 +17,12 @@ int main(int argc, char* argv[])
         of << A << " " << B << endl;
         of.close();
     }
+    {
+        int A = MIN_A;
+        int B = MIN_B;
+        ofstream of("20_min_01.in");
+        of << A << " " << B << endl;
+        of.close();
+    }
     return 0;
 }
