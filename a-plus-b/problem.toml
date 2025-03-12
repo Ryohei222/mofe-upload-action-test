@@ -1,7 +1,6 @@
 id = "A"
 
 params_path = "./tests/constraints.hpp"
-#assets_path = "./statement/assets/"
 sample_path = "./tests/"
 ignore_samples = []
 
@@ -23,10 +22,14 @@ execution_time_limit = 2000 # 実行時間制限 (ms)
 submission_limit_1 = 5 # 1 回前の提出から何秒間隔を開ける必要があるか
 submission_limit_2 = 60 # 2 回前の提出から何秒間隔を開ける必要があるか
 
-[[mofe.testcase_sets.sample]]
+[[mofe.testcase_sets]]
+name = "sample"
 regex = "00_sample_\\d+" # sample のテストケースの名前にマッチする正規表現
 points = 0 # sample ケースの配点
+aggregate_type = "all"
 
-[[mofe.testcase_sets.all]]
+[[mofe.testcase_sets]]
+name = "all"
 regex = "." # all のテストケースの名前にマッチする正規表現
 points = 100 # all ケースの配点
+aggregate_type = "all"
