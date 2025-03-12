@@ -1,0 +1,41 @@
+name: Run test and upload testcases to MOFE
+
+on:
+  push:
+    paths-ignore:
+    - '**.md'
+    - 'docs/**'
+    - .github/**
+
+jobs:
+  Rime-and-upload-testcases:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/tuatmcc/sakumon-image:amd64
+      volumes:
+        - /github/workspace:/root/app
+    permissions:
+      contents: read
+      packages: read
+      attestations: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set Working Directory
+        run: cd /root/app
+
+      - name: Rime test
+        run: rime test --keep_going
+
+      - name: Embed constraints and testcases to statements
+        run: ss-manager run
+     
+      - name: Upload testcases to MOFE
+        uses: Ryohei222/mofe-upload-action
+        with:
+          mofe-username: ${{ vars.MOFE_USERNAME }}
+          mofe-password: ${{ secrets.MOFE_PASSWORD }}
+          upload-statement: true
+          force-upload-statement: true
+          upload-testcases: true
