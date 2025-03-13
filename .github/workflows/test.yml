@@ -27,6 +27,9 @@ jobs:
       - name: Generate constraints.hpp
         run: ss-manager run -c
 
+      - name: Rime clean
+        run: rime clean
+
       - name: Rime test
         run: rime test --keep_going
 

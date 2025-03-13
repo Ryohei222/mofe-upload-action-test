@@ -1,7 +1,7 @@
 id = "A"
 
 params_path = "./tests/constraints.hpp"
-sample_path = "./tests/"
+sample_path = "./rime-out/tests"
 ignore_samples = []
 
 [[statements]]
