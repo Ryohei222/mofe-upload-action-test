@@ -31,7 +31,7 @@ jobs:
         run: rime test --keep_going
      
       - name: Upload testcases to MOFE
-        uses: Ryohei222/mofe-upload-action@520ec6d16394c43d34cdb2430e744e455e7eea94
+        uses: Ryohei222/mofe-upload-action@3d30fcbb9c54340a2e71d100d3625ea7074a728b
         with:
           mofe-username: ${{ vars.MOFE_USERNAME }}
           mofe-password: ${{ secrets.MOFE_PASSWORD }}
