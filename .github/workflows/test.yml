@@ -37,7 +37,7 @@ jobs:
         run: ss-manager run -o md
 
       - name: Upload testcases to MOFE
-        uses: Ryohei222/mofe-upload-action@1a3ee525e4846544e70bfff22dfcfa7b4a17edd4
+        uses: Ryohei222/mofe-upload-action@d610c94d6547a9cedda58e09d25d157c79689438
         with:
           mofe_username: ${{ vars.MOFE_USERNAME }}
           mofe_password: ${{ secrets.MOFE_PASSWORD }}
